@@ -1,10 +1,70 @@
 # FastMatrixMultiplication
-Fast Matrix Multiplication Algorithm, Implemented in Javascript.
-Certainly! Here's the LaTeX content converted to Markdown format:
+Fast Matrix Multiplication Algorithm, Implemented in Javascript:
+---
+  
+|      |      |     |      |      |     |      |      |
+|------|------|-----|------|------|-----|------|------|
+| `a1` | `a2` | `*` | `b1` | `b2` | `=` | `c1` | `c2` |
+| `a3` | `a4` |     | `b3` | `b4` |     | `c3` | `c4` | 
+
+  
+// Algorithm 1 //  
+// 8 Multiplications //  
+// 4 Additions //  
+  
+c11 = a11 * b11 + a12 * b21  
+c12 = a11 * b12 + a12 * b22  
+c21 = a21 * b11 + a22 * b21  
+c22 = a21 * b12 + a22 * b22  
 
 ---
 
-Yes, it is possible to rewrite the expressions for \(c_{11}\), \(c_{12}\), \(c_{21}\), and \(c_{22}\) in a manner that includes all terms on the right-hand side (RHS) of the original equation, but arranges them such that unwanted terms cancel out, leaving only the desired terms. To achieve this, we need to introduce terms in such a way that they sum to zero for the parts we don't want to keep in each expression.
+// Algorithm 2 //  
+// 8 Multiplications //  
+// 4 Additions //  
+  
+a = a11 * b11  
+b = a12 * b21  
+c = a11 * b12  
+d = a12 * b22  
+e = a21 * b11  
+f = a22 * b21  
+g = a21 * b12  
+h = a22 * b22  
+  
+c11 = a + b  
+c12 = c + d  
+c21 = e + f  
+c22 = g + h  
+
+---
+
+// Algorithm 3 (Fastest) //  
+// 7 Multiplications //  
+// 15 Additions //  
+// 10 Subtractions //
+  
+|      |      |     |      |      |     |      |      |
+|------|------|-----|------|------|-----|------|------|
+| `a1` | `a2` | `*` | `b1` | `b2` | `=` | `c1` | `c2` |
+| `a3` | `a4` |     | `b3` | `b4` |     | `c3` | `c4` | 
+  
+m1 = (a2 - a4)(b1 + b4)  
+m2 = (a3 + a4)(b1)  
+m3 = (b2 - b4)(a1)  
+m4 = (b3 - b1)(a4)  
+m5 = (a1 + a2)(b4)  
+m6 = (a3 - a1)(b1 + b2)  
+m7 = (a2 - a4)(b3 + b4)  
+  
+c1 = m1 + m4 - m5 + m7  
+c2 = m3 + m5  
+c3 = m2 + m4  
+c4 = m1 - m2 + m3 + m6  
+
+---
+## Details
+It is possible to rewrite the expressions for \(c_{11}\), \(c_{12}\), \(c_{21}\), and \(c_{22}\) in a manner that includes all terms on the right-hand side (RHS) of the original equation, but arranges them such that unwanted terms cancel out, leaving only the desired terms. To achieve this, we need to introduce terms in such a way that they sum to zero for the parts we don't want to keep in each expression.
 
 The expressions you've provided are essentially the result of matrix multiplication, where the resulting matrix \(C\) is the product of matrices \(A\) and \(B\) in standard matrix multiplication form:
 
