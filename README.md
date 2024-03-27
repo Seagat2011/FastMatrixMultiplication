@@ -1,17 +1,14 @@
-# FastMatrixMultiplication
-Fast Matrix Multiplication Algorithm, Implemented in Javascript:
----
+## Fast Matrix Multiplication Algorithm, Implemented in Javascript:
   
+// Algorithm 1 //  
+// 8 Multiplications //  
+// 4 Additions //  
+
 |      |      |     |      |      |     |      |      |
 |------|------|-----|------|------|-----|------|------|
 | `a1` | `a2` | `*` | `b1` | `b2` | `=` | `c1` | `c2` |
 | `a3` | `a4` |     | `b3` | `b4` |     | `c3` | `c4` | 
 
-  
-// Algorithm 1 //  
-// 8 Multiplications //  
-// 4 Additions //  
-  
 c11 = a11 * b11 + a12 * b21  
 c12 = a11 * b12 + a12 * b22  
 c21 = a21 * b11 + a22 * b21  
@@ -22,7 +19,12 @@ c22 = a21 * b12 + a22 * b22
 // Algorithm 2 //  
 // 8 Multiplications //  
 // 4 Additions //  
-  
+
+|      |      |     |      |      |     |      |      |
+|------|------|-----|------|------|-----|------|------|
+| `a1` | `a2` | `*` | `b1` | `b2` | `=` | `c1` | `c2` |
+| `a3` | `a4` |     | `b3` | `b4` |     | `c3` | `c4` | 
+
 a = a11 * b11  
 b = a12 * b21  
 c = a11 * b12  
