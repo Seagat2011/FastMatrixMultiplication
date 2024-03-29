@@ -46,7 +46,7 @@ c22 = g + h
 // Algorithm 3 - Volker Strassen 69 - Fastest //  
 // 7 Multiplications //  
 // 15 Additions //  
-// 10 Subtractions //
+// 10 Subtractions //  
 // Time complexity O(N^2.8074) //  
   
 |      |      |     |      |      |     |      |      |
