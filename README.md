@@ -3,6 +3,7 @@
 // Algorithm 1 //  
 // 8 Multiplications //  
 // 4 Additions //  
+// Time complexity O(N^3) //  
 
 |      |      |     |      |      |     |      |      |
 |------|------|-----|------|------|-----|------|------|
@@ -19,6 +20,7 @@ c22 = a21 * b12 + a22 * b22
 // Algorithm 2 //  
 // 8 Multiplications //  
 // 4 Additions //  
+// Time complexity O(N^3) //  
 
 |      |      |     |      |      |     |      |      |
 |------|------|-----|------|------|-----|------|------|
@@ -45,6 +47,7 @@ c22 = g + h
 // 7 Multiplications //  
 // 15 Additions //  
 // 10 Subtractions //
+// Time complexity O(N^2.8074) //  
   
 |      |      |     |      |      |     |      |      |
 |------|------|-----|------|------|-----|------|------|
