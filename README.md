@@ -69,6 +69,25 @@ c4 = m1 - m2 + m3 + m6
 
 ---
 ## Details
+
+His reductions -- albeit algorithmically equivalent, are not **algebraically** equivalent. A crucial distinction between algorithmic equivalence and algebraic equivalence, particularly in the context of Strassen's algorithm for matrix multiplication should be made. Let's clarify these concepts:
+
+- **Algorithmic Equivalence** refers to two algorithms performing the same task (in this case, matrix multiplication) with potentially different methods or steps but ultimately producing the same result. The efficiency or the number of operations might vary, but the output is identical given the same input.
+
+- **Algebraic Equivalence** means that two expressions are identical in value for all values of their variables, following directly from algebraic laws and identities. In the context of matrix multiplication, this would mean performing the exact same series of algebraic operations. Directly manipulating these expressions reveals that the algebraic simplification and rearrangement through this (the Strassen) method might not straightforwardly reduce to the naive form due to its design to optimize and reduce computational steps, particularly in reducing the number of multiplications.
+
+Strassen's algorithm, by introducing a clever rearrangement of operations and exploiting mathematical properties, reduces the number of multiplication operations required to perform matrix multiplication. This reduction is achieved not by finding an algebraically equivalent form of the naive multiplication method (where each element of the resulting matrix is computed directly from the corresponding row and column multiplications) but by transforming the problem into one where fewer multiplications can produce the necessary intermediate values for the final result.
+
+The key insight of Strassen and similar algorithms is that they find a more efficient pathway (algorithmically) to arrive at the same result as the naive approach. They do this not by performing the same operations in a slightly optimized manner but by fundamentally changing the operations performed. This means:
+
+- They are not algebraically equivalent in the sense that they perform the same operations in a different order or simply optimize the existing algebraic operations. Instead, they reorganize the computation itself, introducing auxiliary variables and exploiting mathematical properties to reduce the number of multiplications.
+  
+- The algorithms are equivalent in the sense that for any given identical inputs, they will produce identical outputs, despite the internal process being different. This equivalence is crucial for validating the correctness of Strassen’s algorithm and its utility as a replacement for the naive approach in practical applications.
+
+Thus, Strassen’s reductions are algorithmically equivalent to the naive approach because they result in the same final matrix product, but they are not algebraically equivalent in terms of performing the same series of algebraic operations. This distinction is essential for understanding the innovation and efficiency improvements brought about by Strassen's algorithm and subsequent developments in fast matrix multiplication methods.
+
+## ETC.
+
 It is possible to rewrite the expressions for \(c_{11}\), \(c_{12}\), \(c_{21}\), and \(c_{22}\) in a manner that includes all terms on the right-hand side (RHS) of the original equation, but arranges them such that unwanted terms cancel out, leaving only the desired terms. To achieve this, we need to introduce terms in such a way that they sum to zero for the parts we don't want to keep in each expression.
 
 The expressions you've provided are essentially the result of matrix multiplication, where the resulting matrix \(C\) is the product of matrices \(A\) and \(B\) in standard matrix multiplication form:
